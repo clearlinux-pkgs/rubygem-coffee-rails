@@ -1,0 +1,33 @@
+# This file contains additional build requirements that did not get
+# picked up automatically. One name per line, no whitespace.
+ruby
+rubygem-actionpack
+rubygem-actionview
+rubygem-activesupport
+rubygem-builder
+rubygem-bundler
+rubygem-coffee-script
+rubygem-coffee-script-source
+rubygem-erubis
+rubygem-i18n
+rubygem-loofah
+rubygem-mini_portile
+rubygem-minitest
+rubygem-nokogiri
+rubygem-rack
+rubygem-rack-test
+rubygem-rails
+rubygem-rails-deprecated_sanitizer
+rubygem-rails-dom-testing
+rubygem-rails-html-sanitizer
+rubygem-rdoc
+rubygem-thread_safe
+rubygem-tzinfo
+rubygem-railties
+rubygem-rake
+rubygem-execjs
+rubygem-thor
+rubygem-libv8
+rubygem-ref
+rubygem-ronn
+rubygem-therubyracer

@@ -1,8 +1,8 @@
 Name     : rubygem-coffee-rails
 Version  : 4.1.0
 Release  : 6
-URL      : https://rubygems.org/downloads/coffee-rails-4.1.0.gem
-Source0  : https://rubygems.org/downloads/coffee-rails-4.1.0.gem
+URL      : https://rubygems.org/downloads/coffee-rails-4.1.1.gem
+Source0  : https://rubygems.org/downloads/coffee-rails-4.1.1.gem
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : MIT
@@ -46,7 +46,7 @@ CoffeeScript adapter for the Rails asset pipeline. Also adds support to use Coff
 
 %prep
 gem unpack %{SOURCE0}
-%setup -q -D -T -n coffee-rails-4.1.0
+%setup -q -D -T -n coffee-rails-4.1.1
 gem spec %{SOURCE0} -l --ruby > rubygem-coffee-rails.gemspec
 
 %build
@@ -59,7 +59,7 @@ gem install -V \
 --force \
 --install-dir .%{gem_dir} \
 --bindir .%{_bindir} \
-coffee-rails-4.1.0.gem
+coffee-rails-4.1.1.gem
 
 mkdir -p %{buildroot}%{gem_dir}
 cp -pa .%{gem_dir}/* \
@@ -75,9 +75,9 @@ fi
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost
-pushd %{buildroot}%{gem_dir}/gems/coffee-rails-4.1.0
+pushd %{buildroot}%{gem_dir}/gems/coffee-rails-4.1.1
 # Disable Bundler.
-sed -i '/require .bundler\/setup./ s/^/#/' test/test_helper.rb
+# sed -i '/require .bundler\/setup./ s/^/#/' test/test_helper.rb
 
 # Explicitly require ActionController to workaround "uninitialized constant
 # ActionController::Live" issue.
@@ -90,44 +90,28 @@ popd
 
 %files
 %defattr(-,root,root,-)
-%exclude /usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.0/test/tmp/
-/usr/lib64/ruby/gems/2.2.0/cache/coffee-rails-4.1.0.gem
-/usr/lib64/ruby/gems/2.2.0/doc/coffee-rails-4.1.0/ri/ActionView/cdesc-ActionView.ri
-/usr/lib64/ruby/gems/2.2.0/doc/coffee-rails-4.1.0/ri/Coffee/Generators/AssetsGenerator/cdesc-AssetsGenerator.ri
-/usr/lib64/ruby/gems/2.2.0/doc/coffee-rails-4.1.0/ri/Coffee/Generators/AssetsGenerator/copy_coffee-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/coffee-rails-4.1.0/ri/Coffee/Generators/cdesc-Generators.ri
-/usr/lib64/ruby/gems/2.2.0/doc/coffee-rails-4.1.0/ri/Coffee/Rails/Engine/cdesc-Engine.ri
-/usr/lib64/ruby/gems/2.2.0/doc/coffee-rails-4.1.0/ri/Coffee/Rails/TemplateHandler/call-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/coffee-rails-4.1.0/ri/Coffee/Rails/TemplateHandler/cdesc-TemplateHandler.ri
-/usr/lib64/ruby/gems/2.2.0/doc/coffee-rails-4.1.0/ri/Coffee/Rails/TemplateHandler/erb_handler-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/coffee-rails-4.1.0/ri/Coffee/Rails/cdesc-Rails.ri
-/usr/lib64/ruby/gems/2.2.0/doc/coffee-rails-4.1.0/ri/Coffee/cdesc-Coffee.ri
-/usr/lib64/ruby/gems/2.2.0/doc/coffee-rails-4.1.0/ri/cache.ri
-/usr/lib64/ruby/gems/2.2.0/doc/coffee-rails-4.1.0/ri/lib/rails/generators/coffee/assets/templates/page-javascript_coffee.ri
-/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.0/.gitignore
-/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.0/.travis.yml
-/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.0/CHANGELOG.md
-/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.0/Gemfile
-/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.0/MIT-LICENSE
-/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.0/README.md
-/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.0/Rakefile
-/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.0/coffee-rails.gemspec
-/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.0/coffee-rails.gemspec.erb
-/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.0/gemfiles/Gemfile-4-0-stable
-/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.0/gemfiles/Gemfile-4-1-stable
-/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.0/lib/assets/javascripts/coffee-script.js.erb
-/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.0/lib/coffee-rails.rb
-/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.0/lib/coffee/rails/engine.rb
-/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.0/lib/coffee/rails/template_handler.rb
-/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.0/lib/coffee/rails/version.rb
-/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.0/lib/rails/generators/coffee/assets/assets_generator.rb
-/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.0/lib/rails/generators/coffee/assets/templates/javascript.coffee
-/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.0/test/assets_generator_test.rb
-/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.0/test/assets_test.rb
-/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.0/test/controller_generator_test.rb
-/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.0/test/scaffold_generator_test.rb
-/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.0/test/support/routes.rb
-/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.0/test/support/site/index.coffee
-/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.0/test/template_handler_test.rb
-/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.0/test/test_helper.rb
-/usr/lib64/ruby/gems/2.2.0/specifications/coffee-rails-4.1.0.gemspec
+%exclude /usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.1/test/tmp/
+/usr/lib64/ruby/gems/2.2.0/cache/coffee-rails-4.1.1.gem
+/usr/lib64/ruby/gems/2.2.0/doc/coffee-rails-4.1.1/ri/ActionView/cdesc-ActionView.ri
+/usr/lib64/ruby/gems/2.2.0/doc/coffee-rails-4.1.1/ri/Coffee/Generators/AssetsGenerator/cdesc-AssetsGenerator.ri
+/usr/lib64/ruby/gems/2.2.0/doc/coffee-rails-4.1.1/ri/Coffee/Generators/AssetsGenerator/copy_coffee-i.ri
+/usr/lib64/ruby/gems/2.2.0/doc/coffee-rails-4.1.1/ri/Coffee/Generators/cdesc-Generators.ri
+/usr/lib64/ruby/gems/2.2.0/doc/coffee-rails-4.1.1/ri/Coffee/Rails/Engine/cdesc-Engine.ri
+/usr/lib64/ruby/gems/2.2.0/doc/coffee-rails-4.1.1/ri/Coffee/Rails/TemplateHandler/call-c.ri
+/usr/lib64/ruby/gems/2.2.0/doc/coffee-rails-4.1.1/ri/Coffee/Rails/TemplateHandler/cdesc-TemplateHandler.ri
+/usr/lib64/ruby/gems/2.2.0/doc/coffee-rails-4.1.1/ri/Coffee/Rails/TemplateHandler/erb_handler-c.ri
+/usr/lib64/ruby/gems/2.2.0/doc/coffee-rails-4.1.1/ri/Coffee/Rails/cdesc-Rails.ri
+/usr/lib64/ruby/gems/2.2.0/doc/coffee-rails-4.1.1/ri/Coffee/cdesc-Coffee.ri
+/usr/lib64/ruby/gems/2.2.0/doc/coffee-rails-4.1.1/ri/cache.ri
+/usr/lib64/ruby/gems/2.2.0/doc/coffee-rails-4.1.1/ri/lib/rails/generators/coffee/assets/templates/page-javascript_coffee.ri
+/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.1/CHANGELOG.md
+/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.1/MIT-LICENSE
+/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.1/README.md
+/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.1/lib/assets/javascripts/coffee-script.js.erb
+/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.1/lib/coffee-rails.rb
+/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.1/lib/coffee/rails/engine.rb
+/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.1/lib/coffee/rails/template_handler.rb
+/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.1/lib/coffee/rails/version.rb
+/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.1/lib/rails/generators/coffee/assets/assets_generator.rb
+/usr/lib64/ruby/gems/2.2.0/gems/coffee-rails-4.1.1/lib/rails/generators/coffee/assets/templates/javascript.coffee
+/usr/lib64/ruby/gems/2.2.0/specifications/coffee-rails-4.1.1.gemspec

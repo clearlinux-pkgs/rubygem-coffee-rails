@@ -4,7 +4,7 @@
 #
 Name     : rubygem-coffee-rails
 Version  : 4.2.1
-Release  : 11
+Release  : 12
 URL      : https://rubygems.org/downloads/coffee-rails-4.2.1.gem
 Source0  : https://rubygems.org/downloads/coffee-rails-4.2.1.gem
 Summary  : No detailed summary available
